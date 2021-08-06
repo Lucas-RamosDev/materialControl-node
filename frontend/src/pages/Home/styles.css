@@ -1,0 +1,41 @@
+/* =========== CONTEUDO ================= */
+
+.home section {
+
+    margin-top: 5rem;;
+    width: 25rem;
+
+    align-items: center;
+}
+
+.home section h1 {
+    font: 700 1.625rem "Poppins", sans-serif;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.home section h2 {
+    
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* ========================================== */
+/* ============= MEDIA QUERIES ============== */
+/* ========================================== */
+
+/* extra large devices: mais de 1200px */
+@media(min-width: 1200px) {
+
+    /* =========== CONTEUDO ================= */
+
+    .home section {
+
+        margin-top: 5rem;;
+        width: 50rem;
+    
+        align-items: center;
+
+    }
+
+}

@@ -1,0 +1,87 @@
+/* =========== SIDEBAR ================= */
+
+nav {
+  margin-top: 3.5rem;
+  background: var(--base-color);
+  border-right: 4px solid #FFA724;
+  width: 4rem;
+  height: 100%;
+  
+
+  
+}
+
+nav ul li {
+  
+  text-align: center;
+  align-items: center;
+  padding: 1.56rem 0;
+  margin-top: 0.125rem;
+ 
+}
+
+nav ul li:first-child { /* aplica margem apenas no primeiro "li" */
+  margin-top: 1.25rem;
+}
+
+nav ul li a {
+  color: var(--base-color-white);
+  transition: color 0.2s;
+  position: relative;   
+}
+
+nav ul li a:hover {
+  color: #FFA724;
+}
+
+nav ul li a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #FFA724;
+
+  position: absolute;
+  left: 0;
+  bottom: -0.9rem;
+
+  transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li span {
+  display: none;
+}
+
+/* ========================================== */
+/* ============= MEDIA QUERIES ============== */
+/* ========================================== */
+
+/* extra large devices: mais de 1200px */
+@media(min-width: 1200px) {
+
+  /* =========== SIDEBAR ================= */
+
+  nav {
+      width: 15rem;
+  }
+
+  nav ul li {
+      display: flex;
+      align-items: center;
+      gap:1rem;       
+  }
+
+  nav ul li a {  
+      margin-left: 2.8rem;
+      display: flex;
+      gap:1rem;
+  }
+
+  nav ul li span {
+      display: block;
+  }
+
+}

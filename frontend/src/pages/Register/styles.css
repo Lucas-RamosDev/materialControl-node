@@ -1,0 +1,240 @@
+
+.register{
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: inline-block;  
+}
+
+
+/*--- ### HEADER ### ---*/
+
+.header {
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content:space-between; 
+}
+
+.header a {
+  padding: 0.6rem 0.8rem;
+  font: 700 0.875rem "Poppins", sans-serif;
+  color: #284263;
+  border: 1px solid #284263;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.header a:hover {
+  background: #DAE8F9;
+}
+
+/*--- ### SEARCH ### ---*/
+
+.search {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search input {
+  width: 20rem ;
+  height: 2.8rem;
+
+  padding: 0 1.5rem;
+  font: 400 0.875rem "Poppins", sans-serif;
+
+  border: 1px solid #dcdce6;
+  border-radius: 8px;
+}
+
+.search button {
+  padding: 0.6rem 0.9rem;
+  font: 700 0.875rem "Poppins", sans-serif;
+  color: #284263;
+  background: #FFF;
+  border-radius: 8px;
+}
+
+.search button:hover {
+  background: #DAE8F9;
+}
+
+
+/*--- ### CONTENT ### ---*/
+
+
+.content {
+  margin-top: 2rem;
+
+}
+
+.content table {
+  font: 400 0.7rem "Poppins", sans-serif;  
+}
+
+.content table tr td {
+  height: 1.8rem;
+  text-align: center;
+  border-top: 1px solid #DAE8F9; 
+}
+
+.th-code {
+  font: 700 0.875rem "Poppins", sans-serif;
+  width: 4rem; 
+}
+
+.th-description {
+  font: 700 0.875rem "Poppins", sans-serif;
+  width: 12rem; 
+}
+
+.th-type {
+  font: 700 0.875rem "Poppins", sans-serif;
+  width: 8rem;
+}
+
+.th-action {
+  font: 700 0.875rem "Poppins", sans-serif;
+  width: 0.5rem;
+}
+
+.bt-edit,
+.bt-delete {
+  width: 1.2rem;
+  margin-left: 0.625rem;
+
+  background: #b1b1b6;
+  border-radius: 5px;
+  display: inline-flex;
+  cursor: pointer;
+  transition: filter 0.2s; 
+}
+
+.bt-edit:hover{
+  background: #284263;
+}
+
+.bt-delete:hover{
+  background: #832020;
+}
+
+/* --- CONFIGURAÇÃO ESTILO CONTROL PAGINATE --- */
+
+.pagination{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 0.5rem
+}
+
+.pagination div{
+  margin-left: 1rem;
+  width: 2rem;
+  height: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  font: 700 1.125rem "Poppins", sans-serif;
+  color: #878787;
+}
+
+.notFound{
+  display: none;
+  margin-top: 3rem;
+  text-align: center;
+  font: 400 0.8rem "Poppins", sans-serif;
+}
+
+.notFound img{
+  width: 15rem;
+  margin-top: 40px;
+}
+
+/* ========================================== */
+/* ============= MEDIA QUERIES ============== */
+/* ========================================== */
+
+/* extra large devices: mais de 1200px */
+@media(min-width: 1200px) {
+
+  /*--- ### HEADER ### ---*/
+
+  .header a {
+    margin-right: 3rem;
+    padding: 0.9rem 1rem;
+  }
+
+  /*--- ### SEARCH ### ---*/
+
+  .search {
+    display: flex;
+    justify-content:center;
+    gap: 1rem
+  }
+
+  .search input {
+    width: 30rem ;
+  }
+
+  /*--- ### CONTENT ### ---*/
+  
+  .content {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    background: chartreuse;
+  }
+
+  .content table {
+    width: 50rem;
+
+    background: chocolate;
+  }
+
+
+  .bt-edit{
+    width: 25px;
+    height: 25px;
+    margin-top: 3px;
+    margin-left: 10px;
+    align-items: center;
+    justify-content: center;
+
+    background: #b1b1b6;
+    border: 0;
+    border-radius: 5px;
+    display: inline-flex;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.bt-edit:hover{
+    background: #284263;
+}
+
+.bt-delete{
+    width: 25px;
+    height: 25px;
+    margin-top: 3px;
+    margin-left: 10px;
+    align-items: center;
+    justify-content: center;
+
+    background: #b1b1b6;
+    border: 0;
+    border-radius: 5px;
+    display: inline-flex;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.bt-delete:hover{
+    background: #832020;
+}
+
+
+}

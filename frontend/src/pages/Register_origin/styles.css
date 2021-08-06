@@ -1,0 +1,183 @@
+.functions-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.searchForm { 
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    width: 500px;
+}
+
+.searchForm input{
+    margin-top: 20px;
+    max-width: 800px;
+    width: 100%;
+    height: 40px;
+    color: #333;
+    border: 1px solid #dcdce6;
+    border-radius: 8px;
+    padding: 0 24px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.searchForm button{
+    margin-left: 20px;
+    padding: 7px;
+    background: #b1b1b6;
+    border: 0;
+    border-radius: 5px;
+    color: #FFF;
+    
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.functions-container button:hover {
+    background-color: #284263;
+}
+
+
+.functions-container a {
+    margin-left: 100px;
+    padding: 13px;
+    background:#FFF;
+    color: #b1b1b6;
+    font: 400 18px Roboto, sans-serif;
+    border: 1px solid #b1b1b6;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.functions-container a:hover {
+    background-color: #284263;
+    color: #fff
+}
+
+
+/* --- CONFIGURAÇÃO ESTILO TABELA --- */
+
+.register-container{
+    margin-left: 20px;
+}
+
+.table-container{
+    height: 290px;
+}
+
+
+.register-container table {
+    border-collapse: collapse;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+
+.register-container table tr{
+    height: 30px;
+}
+
+.register-container table tr td{
+    border-top: 1px solid #dcdce6;
+}
+
+.center {
+    text-align: center;
+}
+
+.btEdit{
+    width: 25px;
+    height: 25px;
+    margin-top: 3px;
+    margin-left: 10px;
+    align-items: center;
+    justify-content: center;
+
+    background: #b1b1b6;
+    border: 0;
+    border-radius: 5px;
+    display: inline-flex;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.btEdit:hover{
+    background: #284263;
+}
+
+.btDelete{
+    width: 25px;
+    height: 25px;
+    margin-top: 3px;
+    margin-left: 10px;
+    align-items: center;
+    justify-content: center;
+
+    background: #b1b1b6;
+    border: 0;
+    border-radius: 5px;
+    display: inline-flex;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.btDelete:hover{
+    background: #832020;
+}
+
+/* --- CONFIGURAÇÃO ESTILO CONTROL PAGINATE --- */
+
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 8px;
+}
+
+.pagination div{
+    margin-left: 18px;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    font-size: 18px;
+    color: #878787;
+}
+
+
+.pagination div{
+    width: 40px;
+    height: 40px;
+    border-radius: 40%;
+    
+    border: 1px solid #878787 ;
+}
+
+.pagination div:hover{
+    color: #fff;
+    background: #549DED;
+    border-color: #549DED ;
+}
+
+.notFound{
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+.notFound img{
+    width:300px;
+    margin-top: 40px;
+}

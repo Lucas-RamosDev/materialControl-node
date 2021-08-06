@@ -1,0 +1,71 @@
+/* =========== HEADER ================= */
+
+header{
+    background: var(--base-color-soft);
+    border-bottom: 1px solid #E4E4E4 ;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1); /* cria uma sombra */
+    height: 3.5rem;
+    width: 100%;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header span {
+    display: none;
+}
+
+.bt-menu {
+    margin-left: 1.25rem;
+    color: var(--base-color);
+}
+
+.bt-logout {
+    margin-right: 1.25rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.bt-logout:hover {
+    color: crimson;
+}
+
+
+img {
+    width: 11rem ;
+}
+
+.container {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+}
+
+/* ========================================== */
+/* ============= MEDIA QUERIES ============== */
+/* ========================================== */
+
+/* extra large devices: mais de 1200px */
+@media(min-width: 1200px) {
+
+    /* =========== HEADER ================= */
+
+    .bt-menu {
+        display: none;
+    }
+
+    header span {
+        display: block;
+    }
+
+    img {
+        margin-left: 1rem;
+    }
+
+}

@@ -1,0 +1,100 @@
+.login-container {
+    width: 100%;
+    max-width: 70rem;
+    height: 100vh;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container section.form-login {
+    width: 100%;
+    max-width: 21.875rem;
+    margin: 3.75rem;
+}
+
+.title-login {
+    font: 700 1.9rem "Poppins", sans-serif;
+    text-align: center;
+    margin-bottom: 0.625rem;
+}
+
+.description{
+    color: #9C9C9C;
+    font: 400 1.9rem "Poppins", sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 3.125rem;
+}
+form h1 {
+    font: 700 1.625rem "Poppins", sans-serif;
+    color: var(--text-color);
+}
+
+form input {
+
+    font: 400 1.125rem "Poppins", sans-serif;
+    color: var(--text-color);
+
+    width: 100%;
+    height: 3.125rem;
+    padding: 0 1.5rem;
+    margin-bottom: 1rem;
+    
+    border: 1px solid var(--text-color-soft);
+    border-radius: 6px;
+}
+
+.button {
+    font: 400 1.125rem "Poppins", sans-serif;
+    color: #FFF;
+    width: 100%;
+    height: 3.75rem;
+    background: var(--base-color);
+    border: 0;
+    border-radius: 6px;
+    margin-top: 1rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.125rem;
+    line-height: 3.75rem;
+    transition: filter 0.2s;
+}
+
+.button:hover {
+    filter: brightness(90%)
+}
+
+.login-container section.form-login form {
+    margin-top: 1.25rem;
+}
+
+.login-container section.form-login form h1{
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.login-container section.form-login form a {
+    display: flex;
+    align-items: center;
+    margin-top: 2.5rem;
+    color: var(--text-color);
+    font-size: 0.75rem;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.login-container section.form-login form a:hover {
+    opacity: 0.8;
+}
+
+.login-container section.form-login form a svg{
+    margin-right: 0.5rem;
+}
+
+.img {
+    width: 28rem;
+}

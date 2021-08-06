@@ -1,0 +1,10 @@
+--- ### Enviando arquivos: ### ---
+$ git init
+$ git add .  
+$ git commit -m "descrever alterações"
+$ git remote add origin https://github.com/Lucas-RamosDev/materialControl.git
+$ git push origin master
+
+--- ### Baixando arquivos ### ---
+$ git clone https://github.com/Lucas-RamosDev/materialControl.git
+$ git pull
