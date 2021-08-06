@@ -19,7 +19,7 @@ export default function Home() {
 
                 <section >
 
-                    <h1>Seja bem Vindo(a)!</h1>
+                    <h1>Seja bem Vindo(a) testando 123!</h1>
 
                     <h2>Selecione a opção desejada na barra lateral.</h2>
 
