@@ -144,20 +144,36 @@
   margin-top: 0.5rem
 }
 
-.pagination div{
+
+.pagination div {
   margin-left: 1rem;
   margin-bottom: 2rem;
-  width: 2rem;
-  height: 2rem;
+  width: 2.2rem;
+  height: 2.2rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   cursor: pointer;
-  font: 700 1.125rem "Poppins", sans-serif;
-  color: #878787;
+  font: 400 1.125rem "Poppins", sans-serif;
+  color: #fff;
+
+  background: #00BCD4;
+  border-radius: 50px;
 }
+
+
+/* não aplica este estilo na class "numbers" */
+.pagination div:not(.numbers) {
+  color: #878787;
+  background: #dcdce6;
+}
+
+.pagination div:not(.numbers):hover {
+  filter: brightness(90%)
+}
+
 
 .notFound{
   display: none;
