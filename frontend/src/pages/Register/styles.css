@@ -16,7 +16,7 @@
 
 .header a {
   padding: 0.6rem 0.8rem;
-  font: 700 0.875rem "Poppins", sans-serif;
+  font: 500 0.875rem "Poppins", sans-serif;
   color: #284263;
   border: 1px solid #284263;
   border-radius: 8px;
@@ -35,7 +35,7 @@
 }
 
 .search input {
-  width: 20rem ;
+  width: 18rem ;
   height: 2.8rem;
 
   padding: 0 1.5rem;
@@ -47,14 +47,16 @@
 
 .search button {
   padding: 0.6rem 0.9rem;
-  font: 700 0.875rem "Poppins", sans-serif;
-  color: #284263;
-  background: #FFF;
+  font: 500 0.875rem "Poppins", sans-serif;
+  color: #FFF;
+  background: #284263;
   border-radius: 8px;
+  border: 1px solid #284263;
 }
 
 .search button:hover {
   background: #DAE8F9;
+  color: #284263;
 }
 
 
@@ -67,18 +69,27 @@
 }
 
 .content table {
-  font: 400 0.7rem "Poppins", sans-serif;  
+  font: 400 0.7rem "Poppins", sans-serif; 
+
 }
 
-.content table tr td {
-  height: 1.8rem;
+.content table td {
+  height: 2.5rem;
   text-align: center;
-  border-top: 1px solid #DAE8F9; 
+  border-top: 1px solid #DAE8F9;
+
+  /*background:navajowhite;*/
+
+}
+
+/*seleciona os 2 ultimos objtos (celulas da tabela)*/
+.content table td:nth-last-child( -n+2) {
+  border-top: none;
 }
 
 .th-code {
   font: 700 0.875rem "Poppins", sans-serif;
-  width: 4rem; 
+  width: 4rem;
 }
 
 .th-description {
@@ -93,28 +104,35 @@
 
 .th-action {
   font: 700 0.875rem "Poppins", sans-serif;
-  width: 0.5rem;
 }
 
 .bt-edit,
 .bt-delete {
-  width: 1.2rem;
-  margin-left: 0.625rem;
-
-  background: #b1b1b6;
-  border-radius: 5px;
-  display: inline-flex;
-  cursor: pointer;
-  transition: filter 0.2s; 
+  width: 2rem;
 }
 
-.bt-edit:hover{
+.bt-delete img,
+.bt-edit img {
+
+  width: 1.6rem;
+
+  border-radius: 5px;
+  cursor: pointer;
+  transition: filter 0.2s; 
+
+  background: #b1b1b6;  
+}
+
+.bt-edit img:hover{
   background: #284263;
 }
 
-.bt-delete:hover{
+.bt-delete img:hover{
   background: #832020;
 }
+
+
+
 
 /* --- CONFIGURAÇÃO ESTILO CONTROL PAGINATE --- */
 
@@ -128,6 +146,7 @@
 
 .pagination div{
   margin-left: 1rem;
+  margin-bottom: 2rem;
   width: 2rem;
   height: 2rem;
 
@@ -156,7 +175,32 @@
 /* ============= MEDIA QUERIES ============== */
 /* ========================================== */
 
-/* extra large devices: mais de 1200px */
+/* ### --- --- --- --- --- --- --- --- --- --- --- ### */
+/* ### --- medium large devices: mais de 670px --- ### */
+/* ### --- --- --- --- --- --- --- --- --- --- --- ### */
+
+@media(min-width: 670px) {
+
+  /*--- ### SEARCH ### ---*/
+
+  .search input {
+    width: 27rem ;
+ }
+
+   /*--- ### CONTENT ### ---*/
+  
+   .content {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+}
+
+/* ### --- --- --- --- --- --- --- --- --- --- --- ### */
+/* ### --- extra large devices: mais de 1200px --- ### */
+/* ### --- --- --- --- --- --- --- --- --- --- --- ### */
+
 @media(min-width: 1200px) {
 
   /*--- ### HEADER ### ---*/
@@ -179,62 +223,34 @@
   }
 
   /*--- ### CONTENT ### ---*/
-  
-  .content {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  
-    background: chartreuse;
+
+  .td_code {
+    width: 8.30rem;
   }
 
-  .content table {
-    width: 50rem;
-
-    background: chocolate;
+  .td_description {
+    width: 30rem;
   }
 
+  .td_type {
+    width: 10rem;
+  }
 
-  .bt-edit{
-    width: 25px;
-    height: 25px;
-    margin-top: 3px;
-    margin-left: 10px;
-    align-items: center;
-    justify-content: center;
+  .bt-edit,
+  .bt-delete {
+    width: 2rem;
+  }
 
-    background: #b1b1b6;
-    border: 0;
+  .bt-delete img,
+  .bt-edit img {
+
+    width: 1.6rem;
+
     border-radius: 5px;
-    display: inline-flex;
     cursor: pointer;
-    transition: filter 0.2s;
-}
+    transition: filter 0.2s; 
 
-.bt-edit:hover{
-    background: #284263;
-}
-
-.bt-delete{
-    width: 25px;
-    height: 25px;
-    margin-top: 3px;
-    margin-left: 10px;
-    align-items: center;
-    justify-content: center;
-
-    background: #b1b1b6;
-    border: 0;
-    border-radius: 5px;
-    display: inline-flex;
-    cursor: pointer;
-    transition: filter 0.2s;
-}
-
-.bt-delete:hover{
-    background: #832020;
-}
-
+    background: #b1b1b6;  
+  }
 
 }

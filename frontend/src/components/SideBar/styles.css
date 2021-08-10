@@ -5,19 +5,14 @@ nav {
   background: var(--base-color);
   border-right: 4px solid #FFA724;
   width: 4rem;
-  height: 100%;
-  
-
-  
 }
 
 nav ul li {
-  
+  font: 400 0.9rem "DM Sans", sans-serif;
   text-align: center;
   align-items: center;
   padding: 1.56rem 0;
   margin-top: 0.125rem;
- 
 }
 
 nav ul li:first-child { /* aplica margem apenas no primeiro "li" */

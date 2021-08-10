@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
+
+import { Link } from 'react-router-dom'
+
 import { FiSearch, FiChevronsLeft, FiChevronLeft, FiChevronsRight, FiChevronRight } from 'react-icons/fi'
-import { Link } from 'react-router-dom';
+
+import Header from '../../components/Header';
+import SideBar from '../../components/SideBar'
+
 import EditIcon from '../../assets/edit.svg'
 import DeleteIcon from '../../assets/delete.svg'
 import notFoundImg from '../../assets/notFound.png'
 
-import Header from '../../components/Header';
-import SideBar from '../../components/SideBar'
-import Footer from '../../components/Footer';
-
 import './styles.css'
 
-export default function Register() {
-    
+export default function Register() { 
+
     let tableData = [
         { code: '0001', description: 'AVENTAL DE PVC', type: 'UNIFORMES' },
         { code: '0002', description: 'AVENTAL TERMINCO', type: 'EPI' },
@@ -36,22 +38,24 @@ export default function Register() {
         { code: '0020', description: 'TESTE TESTANDO', type: 'EPI' },
     ];
 
+    
     useEffect(() => {
         
         init()
 
     }, []);
     
-  
+
     //--- ### FUNÇÃO DOS CONTROLES E EXIBIÇÃO DA TABELA ### --- //
-    
-    let perPage = 9 // qts elementos quero ver por pg
+
+    let perPage = 10 // qts elementos quero ver por pg
     const state = {
         page: 1, // pagina atual em que estou
         perPage, // qts elementos quero ver por pg
         totalPage: Math.ceil(tableData.length / perPage) // conta quantas paginas terei
                 // Math.ceil() realiza o arredondamento para cima
     }
+
     //console.log(state.perPage)
     
     // Pega os eventos dos clicks -> controls.createListeners
@@ -118,12 +122,12 @@ export default function Register() {
         },
 
         searchNotFound(){
-            document.getElementById('container').style.display = "none"
+            document.getElementById('content').style.display = "none"
             document.getElementById('notFound').style.display = "block"
         },
 
         searchShow(){
-            document.getElementById('container').style.display = "block"
+            document.getElementById('content').style.display = "block"
             document.getElementById('notFound').style.display = "none"
         },
 
@@ -209,8 +213,8 @@ export default function Register() {
                 //-- adiciona estilo dinamicamente (center = class do .css)
                 td_code.classList.add('center')
                 td_type.classList.add('center')
-                td_actionEdit.classList.add('btEdit')  
-                td_actionDelete.classList.add('btDelete')       
+                td_actionEdit.classList.add('bt-edit')  
+                td_actionDelete.classList.add('bt-delete')       
             }
         
         }
@@ -219,11 +223,11 @@ export default function Register() {
 
 
     function init(){
-        update()
-        controls.createListeners()
-    }
+            update()
+            controls.createListeners()
+        }
 
-    // --- ### FUNÇÕES DO COUNTER VISÍVEL ### ---
+            // --- ### FUNÇÕES DO COUNTER VISÍVEL ### ---
     const [counter, setCounter] = useState(1)
     
     function counterNext(){
@@ -250,97 +254,96 @@ export default function Register() {
 
     function counterLast(){
         setCounter(state.totalPage)
-    }   
-    
+    }
 
 
     return (
 
-        <div className="profile-container">
+        <div className="main-content">
 
-            <SideBar />
+            < Header />
 
-            <div className="result-container">
-                
-                <Header title="Cadastro de itens"/>
+            < SideBar />
 
-                <div className="functions-container">
+            <main className="register">
 
-                    <div className="searchForm">
+                <div className="header">
 
-                        <input 
-                            className="inputSearch" 
-                            placeholder="Código, Descrição ou Tipo"
-                        />
+                    <h1 className="title">Cadastro de Itens</h1>
 
-                        <button 
-                            className="btnSearch">
-                            <FiSearch size={20} color="#fff"/>
-                        </button>
-
-                    </div>
-
-                    <Link to="#">
-                        Cadastrar
-                    </Link>
+                    <Link to="/home" >Cadastrar</Link>
 
                 </div>
 
 
-                <div id="container" className="register-container">
+                <div className="search" >
 
-                    <div className="table-container">
-                        <table>
-                            <thead>
+                    <input
+                        className="inputSearch" 
+                        placeholder="Código, Descrição ou Tipo"
+                    />
+
+                    <button className="btnSearch">
+                        Consultar
+                    </button>
+
+                </div>
+
+
+                <div id="content" className="content">
+
+                    <table>
+
+                        <thead>
                             <tr height="35">
-                                <th width="200">Código</th>
-                                <th width="400">Descrição</th>
-                                <th width="200">Tipo</th>
-                                <th width="100">Ações</th>
+                                <th className="th-code" >Código</th>
+                                <th className="th-description" >Descrição</th>
+                                <th className="th-type" >Tipo</th>
+                                <th className="th-action" >Ações</th>
                             </tr>
-                            </thead>
+                        </thead>
 
-                            <tbody className="tableData" id="tableData"></tbody>
+                        <tbody className="tableData" id="tableData"></tbody>
 
-                        </table>
-                    </div>
-
-                    <div className="pagination">
-
-                        <div 
-                        className="first" 
-                        onClick={counterFirst}
-                        > 
-                            <FiChevronsLeft size="20"/> 
-                        </div>
-
-                        <div 
-                        className="prev" 
-                        onClick={counterPrev}
-                        > 
-                            <FiChevronLeft size="20"/> 
-                        </div>
-
-                        <div className="numbers"> {counter} </div>
-
-                        <div 
-                        className="next" 
-                        onClick={counterNext}
-                        > 
-                            <FiChevronRight size="20"/> 
-                        </div>
-
-                        <div 
-                        className="last"
-                        onClick={counterLast}
-                        > 
-                            <FiChevronsRight size="20"/> 
-                        </div>
-
-                    </div>
+                    </table>
 
                 </div>
 
+                <div className="pagination">
+
+                    <div 
+                    className="first" 
+                    onClick={counterFirst}
+                    > 
+                        <FiChevronsLeft size="20"/> 
+                    </div>
+
+                    <div 
+                    className="prev" 
+                    onClick={counterPrev}
+                    > 
+                        <FiChevronLeft size="20"/> 
+                    </div>
+
+                    <div className="numbers"> {counter} </div>
+
+                    <div 
+                    className="next" 
+                    onClick={counterNext}
+                    > 
+                        <FiChevronRight size="20"/> 
+                    </div>
+
+                    <div 
+                    className="last"
+                    onClick={counterLast}
+                    > 
+                        <FiChevronsRight size="20"/> 
+                    </div>
+
+                </div>
+                
+                
                 <div id="notFound" className="notFound">
 
                     <h1>Ops! Sua pesquisa não foi encontrada.</h1>
@@ -349,12 +352,9 @@ export default function Register() {
 
                 </div>
 
-                <Footer />
-
-            </div>
+            </main>
 
         </div>
-
 
     )
 }

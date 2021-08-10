@@ -55,6 +55,7 @@ export default function Register() {
         totalPage: Math.ceil(tableData.length / perPage) // conta quantas paginas terei
                 // Math.ceil() realiza o arredondamento para cima
     }
+
     //console.log(state.perPage)
     
     // Pega os eventos dos clicks -> controls.createListeners
@@ -209,10 +210,12 @@ export default function Register() {
                 imgDelete.src = DeleteIcon
                 td_actionDelete.appendChild(imgDelete)
                 
-                //-- adiciona estilo dinamicamente (center = class do .css)
-                td_code.classList.add('center')
-                td_type.classList.add('center')
-                td_actionEdit.classList.add('bt-edit')  
+                //-- adiciona estilo dinamicamente (td_code = class do .css)
+                td_code.classList.add('td_code')
+                td_description.classList.add('td_description')
+                td_type.classList.add('td_type')
+
+                td_actionEdit.classList.add('bt-edit')
                 td_actionDelete.classList.add('bt-delete')       
             }
         
@@ -294,11 +297,11 @@ export default function Register() {
                     <table>
 
                         <thead>
-                            <tr height="35">
+                            <tr>
                                 <th className="th-code" >Código</th>
                                 <th className="th-description" >Descrição</th>
                                 <th className="th-type" >Tipo</th>
-                                <th className="th-action" >Ações</th>
+                                <th colSpan="2" className="th-action" >Ações</th>
                             </tr>
                         </thead>
 
