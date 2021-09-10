@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { Link } from 'react-router-dom'
 
-import { FiSearch, FiChevronsLeft, FiChevronLeft, FiChevronsRight, FiChevronRight } from 'react-icons/fi'
+import { FiChevronsLeft, FiChevronLeft, FiChevronsRight, FiChevronRight, FiShoppingCart } from 'react-icons/fi'
 
 import Header from '../../components/Header';
 import SideBar from '../../components/SideBar'
@@ -97,12 +97,11 @@ export default function Register() {
         },
 
         search() {
-            const valueInput = document.querySelector('.inputSearch')
-            const search = valueInput.value.toUpperCase()
+            const valueInput = document.querySelector('.inputSearch').value.toUpperCase()
             
-            const searchDescription = tableData.filter(obj => obj.description.toUpperCase().startsWith(search)) //.startsWith() -> localiza strings iniciadas com...                                                 
-            const searchCode = tableData.filter(obj => obj.code === search)
-            const searchType = tableData.filter(obj => obj.type.toUpperCase().startsWith(search))
+            const searchDescription = tableData.filter(obj => obj.description.toUpperCase().startsWith(valueInput)) //.startsWith() -> localiza strings iniciadas com...                                                 
+            const searchCode = tableData.filter(obj => obj.code === valueInput)
+            const searchType = tableData.filter(obj => obj.type.toUpperCase().startsWith(valueInput))
 
             let searchResult
             
@@ -116,18 +115,19 @@ export default function Register() {
                 searchResult = false //'Resultado não encontrado!'
             }
 
-            //console.log(search)
             //console.log(searchResult)
             return searchResult
         },
 
         searchNotFound(){
             document.getElementById('content').style.display = "none"
+            document.getElementById('pagination').style.display = "none"
             document.getElementById('notFound').style.display = "block"
         },
 
         searchShow(){
-            document.getElementById('content').style.display = "block"
+            document.getElementById('content').style.display = "flex"
+            document.getElementById('pagination').style.display = "flex"
             document.getElementById('notFound').style.display = "none"
         },
 
@@ -173,8 +173,12 @@ export default function Register() {
         let end = start + state.perPage     // start = 0 -> perPage = 5 -> 0 + 5 = 5    
         
         if (controls.search() === false) {
+
             controls.searchNotFound()
+
         } else {
+
+            //controls.searchShow()
 
             let tableDataSearch = controls.search()
 
@@ -210,10 +214,12 @@ export default function Register() {
                 imgDelete.src = DeleteIcon
                 td_actionDelete.appendChild(imgDelete)
                 
-                //-- adiciona estilo dinamicamente (center = class do .css)
-                td_code.classList.add('center')
-                td_type.classList.add('center')
-                td_actionEdit.classList.add('bt-edit')  
+                //-- adiciona estilo dinamicamente (td_code = class do .css)
+                td_code.classList.add('td_code')
+                td_description.classList.add('td_description')
+                td_type.classList.add('td_type')
+
+                td_actionEdit.classList.add('bt-edit')
                 td_actionDelete.classList.add('bt-delete')       
             }
         
@@ -265,7 +271,7 @@ export default function Register() {
 
             < SideBar />
 
-            <main className="register">
+            <main id="register">
 
                 <div className="header">
 
@@ -295,11 +301,11 @@ export default function Register() {
                     <table>
 
                         <thead>
-                            <tr height="35">
+                            <tr>
                                 <th className="th-code" >Código</th>
                                 <th className="th-description" >Descrição</th>
                                 <th className="th-type" >Tipo</th>
-                                <th className="th-action" >Ações</th>
+                                <th colSpan="2" className="th-action" >Ações</th>
                             </tr>
                         </thead>
 
@@ -309,7 +315,7 @@ export default function Register() {
 
                 </div>
 
-                <div className="pagination">
+                <div id="pagination" className="pagination">
 
                     <div 
                     className="first" 

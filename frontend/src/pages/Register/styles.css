@@ -1,5 +1,4 @@
-
-.register{
+#register{
   margin-left: 1rem;
   margin-right: 1rem;
   display: inline-block;  
@@ -8,13 +7,13 @@
 
 /*--- ### HEADER ### ---*/
 
-.header {
+#register .header {
   padding: 1.5rem 0;
   display: flex;
   justify-content:space-between; 
 }
 
-.header a {
+#register .header a {
   padding: 0.6rem 0.8rem;
   font: 500 0.875rem "Poppins", sans-serif;
   color: #284263;
@@ -23,18 +22,18 @@
   transition: 0.2s;
 }
 
-.header a:hover {
+#register .header a:hover {
   background: #DAE8F9;
 }
 
 /*--- ### SEARCH ### ---*/
 
-.search {
+#register .search {
   display: flex;
   justify-content: space-between;
 }
 
-.search input {
+#register .search input {
   width: 18rem ;
   height: 2.8rem;
 
@@ -45,7 +44,7 @@
   border-radius: 8px;
 }
 
-.search button {
+#register .search button {
   padding: 0.6rem 0.9rem;
   font: 500 0.875rem "Poppins", sans-serif;
   color: #FFF;
@@ -54,7 +53,7 @@
   border: 1px solid #284263;
 }
 
-.search button:hover {
+#register .search button:hover {
   background: #DAE8F9;
   color: #284263;
 }
@@ -62,18 +61,19 @@
 
 /*--- ### CONTENT ### ---*/
 
-
-.content {
+#register .content {
   margin-top: 2rem;
 
+  background:cornsilk;
+  
 }
 
-.content table {
+#register .content table {
   font: 400 0.7rem "Poppins", sans-serif; 
 
 }
 
-.content table td {
+#register .content table td {
   height: 2.5rem;
   text-align: center;
   border-top: 1px solid #DAE8F9;
@@ -83,36 +83,36 @@
 }
 
 /*seleciona os 2 ultimos objtos (celulas da tabela)*/
-.content table td:nth-last-child( -n+2) {
+#register .content table td:nth-last-child( -n+2) {
   border-top: none;
 }
 
-.th-code {
+#register .th-code {
   font: 700 0.875rem "Poppins", sans-serif;
   width: 4rem;
 }
 
-.th-description {
+#register .th-description {
   font: 700 0.875rem "Poppins", sans-serif;
   width: 12rem; 
 }
 
-.th-type {
+#register .th-type {
   font: 700 0.875rem "Poppins", sans-serif;
   width: 8rem;
 }
 
-.th-action {
+#register .th-action {
   font: 700 0.875rem "Poppins", sans-serif;
 }
 
-.bt-edit,
-.bt-delete {
+#register .bt-edit,
+#register .bt-delete {
   width: 2rem;
 }
 
-.bt-delete img,
-.bt-edit img {
+#register .bt-delete img,
+#register .bt-edit img {
 
   width: 1.6rem;
 
@@ -123,11 +123,11 @@
   background: #b1b1b6;  
 }
 
-.bt-edit img:hover{
+#register .bt-edit img:hover{
   background: #284263;
 }
 
-.bt-delete img:hover{
+#register .bt-delete img:hover{
   background: #832020;
 }
 
@@ -136,16 +136,16 @@
 
 /* --- CONFIGURAÇÃO ESTILO CONTROL PAGINATE --- */
 
-.pagination{
+#register .pagination{
   display: flex;
   align-items: center;
   justify-content: center;
 
-  margin-top: 0.5rem
+  margin-top: 2rem
 }
 
 
-.pagination div {
+#register .pagination div {
   margin-left: 1rem;
   margin-bottom: 2rem;
   width: 2.2rem;
@@ -165,24 +165,24 @@
 
 
 /* não aplica este estilo na class "numbers" */
-.pagination div:not(.numbers) {
+#register .pagination div:not(.numbers) {
   color: #878787;
   background: #dcdce6;
 }
 
-.pagination div:not(.numbers):hover {
+#register .pagination div:not(.numbers):hover {
   filter: brightness(90%)
 }
 
 
-.notFound{
+#register .notFound{
   display: none;
   margin-top: 3rem;
   text-align: center;
   font: 400 0.8rem "Poppins", sans-serif;
 }
 
-.notFound img{
+#register .notFound img{
   width: 15rem;
   margin-top: 40px;
 }
@@ -199,13 +199,13 @@
 
   /*--- ### SEARCH ### ---*/
 
-  .search input {
+  #register .search input {
     width: 27rem ;
  }
 
-   /*--- ### CONTENT ### ---*/
+  /*--- ### CONTENT ### ---*/
   
-   .content {
+  #register .content {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
@@ -214,51 +214,51 @@
 }
 
 /* ### --- --- --- --- --- --- --- --- --- --- --- ### */
-/* ### --- extra large devices: mais de 1200px --- ### */
+/* ### --- extra large devices: mais de 980px  --- ### */
 /* ### --- --- --- --- --- --- --- --- --- --- --- ### */
 
-@media(min-width: 1200px) {
+@media(min-width: 980px) {
 
   /*--- ### HEADER ### ---*/
 
-  .header a {
+  #register .header a {
     margin-right: 3rem;
     padding: 0.9rem 1rem;
   }
 
   /*--- ### SEARCH ### ---*/
 
-  .search {
+  #register .search {
     display: flex;
     justify-content:center;
     gap: 1rem
   }
 
-  .search input {
+  #register .search input {
     width: 30rem ;
   }
 
   /*--- ### CONTENT ### ---*/
 
-  .td_code {
+  #register .td_code {
     width: 8.30rem;
   }
 
-  .td_description {
+  #register .td_description {
     width: 30rem;
   }
 
-  .td_type {
+  #register .td_type {
     width: 10rem;
   }
 
-  .bt-edit,
-  .bt-delete {
+  #register .bt-edit,
+  #register .bt-delete {
     width: 2rem;
   }
 
-  .bt-delete img,
-  .bt-edit img {
+  #register .bt-delete img,
+  #register .bt-edit img {
 
     width: 1.6rem;
 

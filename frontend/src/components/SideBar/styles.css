@@ -5,6 +5,7 @@ nav {
   background: var(--base-color);
   border-right: 4px solid #FFA724;
   width: 4rem;
+  min-height: 36rem;
 }
 
 nav ul li {

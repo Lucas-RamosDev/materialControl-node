@@ -18,7 +18,7 @@ export default function Header(){
 
             <FiAlignLeft className="bt-menu" size={22}/>
 
-            <img src={LogoBr}/>
+            <img src={LogoBr} alt="Logo Beira Rio"/>
 
             <span>Controle de Materiais  - Departamento pessoal</span>
 

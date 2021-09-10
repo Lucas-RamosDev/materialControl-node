@@ -1,0 +1,241 @@
+
+#stock{
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: inline-block; 
+}
+
+
+/*--- ### HEADER ### ---*/
+
+#stock .header {
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content:space-between;
+}
+
+#stock .header a {
+  padding: 0.6rem 0.8rem;
+  font: 500 0.875rem "Poppins", sans-serif;
+  color: #284263;
+  border: 1px solid #284263;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+#stock .header a:hover {
+  background: #DAE8F9;
+}
+
+/*--- ### SEARCH ### ---*/
+
+#stock .search {
+  display: flex;
+  justify-content: space-between;
+}
+
+#stock .search select {
+  width: 7.8rem ;
+  height: 2.8rem;
+
+  padding: 0 1.5rem;
+  font: 400 0.875rem "Poppins", sans-serif;
+
+  border: 1px solid #dcdce6;
+  border-radius: 8px;
+}
+
+#stock .search input {
+  width: 10.5rem ;
+  height: 2.8rem;
+
+  padding: 0 1.5rem;
+  font: 400 0.875rem "Poppins", sans-serif;
+
+  border: 1px solid #dcdce6;
+  border-radius: 8px;
+
+}
+
+#stock .search button {
+  padding: 0.6rem 0.4rem;
+  font: 500 0.875rem "Poppins", sans-serif;
+  color: #FFF;
+  background: #284263;
+  border-radius: 8px;
+  border: 1px solid #284263;
+}
+
+#stock .search button:hover {
+  background: #DAE8F9;
+  color: #284263;
+}
+
+
+/*--- ### CONTENT ### ---*/
+
+
+#stock .content {
+  margin-top: 2rem;
+}
+
+#stock .content table {
+  font: 400 0.7rem "Poppins", sans-serif; 
+
+}
+
+#stock .content table td {
+  height: 2.5rem;
+  text-align: center;
+  border-top: 1px solid #DAE8F9;
+
+  /*background:navajowhite;*/
+
+}
+
+
+#stock .th-code {
+  font: 700 0.875rem "Poppins", sans-serif;
+  width: 4rem;
+}
+
+#stock .th-description {
+  font: 700 0.875rem "Poppins", sans-serif;
+  width: 12rem; 
+}
+
+#stock .th-market {
+  font: 700 0.875rem "Poppins", sans-serif;
+  width: 8rem;
+}
+
+#stock .th-amount {
+  font: 700 0.875rem "Poppins", sans-serif;
+}
+
+
+
+
+/* --- CONFIGURAÇÃO ESTILO CONTROL PAGINATE --- */
+
+#stock .pagination{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 2rem
+}
+
+
+#stock .pagination div {
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+  width: 2.2rem;
+  height: 2.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  font: 400 1.125rem "Poppins", sans-serif;
+  color: #fff;
+
+  background: #00BCD4;
+  border-radius: 50px;
+}
+
+
+/* não aplica este estilo na class "numbers" */
+#stock .pagination div:not(.numbers) {
+  color: #878787;
+  background: #dcdce6;
+}
+
+#stock .pagination div:not(.numbers):hover {
+  filter: brightness(90%)
+}
+
+
+#stock .notFound{
+  display: none;
+  margin-top: 3rem;
+  text-align: center;
+  font: 400 0.8rem "Poppins", sans-serif;
+}
+
+#stock .notFound img{
+  width: 15rem;
+  margin-top: 40px;
+}
+
+/* ========================================== */
+/* ============= MEDIA QUERIES ============== */
+/* ========================================== */
+
+/* ### --- --- --- --- --- --- --- --- --- --- --- ### */
+/* ### --- medium large devices: mais de 670px --- ### */
+/* ### --- --- --- --- --- --- --- --- --- --- --- ### */
+
+@media(min-width: 670px) {
+
+  /*--- ### SEARCH ### ---*/
+
+  #stock .search input {
+    width: 20rem ;
+  }
+
+  /*--- ### CONTENT ### ---*/
+
+  #stock .content {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+}
+
+/* ### --- --- --- --- --- --- --- --- --- --- --- ### */
+/* ### --- extra large devices: mais de 980px  --- ### */
+/* ### --- --- --- --- --- --- --- --- --- --- --- ### */
+
+@media(min-width: 980px) {
+
+  /*--- ### HEADER ### ---*/
+
+  #stock .header a {
+    margin-right: 3rem;
+    padding: 0.9rem 1rem;
+  }
+
+  /*--- ### SEARCH ### ---*/
+
+  #stock .search {
+    display: flex;
+    justify-content:center;
+    gap: 1rem
+  }
+
+  #stock .search select {
+    width: 14rem ;
+  }
+
+  #stock .search input {
+    width: 30rem ;
+  }
+
+  /*--- ### CONTENT ### ---*/
+
+  #stock .search button {
+    padding: 0.6rem 0.9rem;
+  }
+
+  #stock .td_code {
+    width: 8.30rem;
+  }
+
+  #stock .td_description {
+    width: 30rem;
+  }
+
+}
