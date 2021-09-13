@@ -5,7 +5,7 @@
 }
 
 
-/*--- ### HEADER ### ---*/
+/* Header ================================= */
 
 #register .header {
   padding: 1.5rem 0;
@@ -26,7 +26,7 @@
   background: #DAE8F9;
 }
 
-/*--- ### SEARCH ### ---*/
+/* Search ================================= */
 
 #register .search {
   display: flex;
@@ -59,81 +59,15 @@
 }
 
 
-/*--- ### CONTENT ### ---*/
+/* Table ================================= */
 
-#register .content {
-  margin-top: 2rem;
-
-  background:cornsilk;
-  
-}
-
-#register .content table {
-  font: 400 0.7rem "Poppins", sans-serif; 
-
-}
-
-#register .content table td {
-  height: 2.5rem;
-  text-align: center;
-  border-top: 1px solid #DAE8F9;
-
-  /*background:navajowhite;*/
-
-}
-
-/*seleciona os 2 ultimos objtos (celulas da tabela)*/
-#register .content table td:nth-last-child( -n+2) {
-  border-top: none;
-}
-
-#register .th-code {
-  font: 700 0.875rem "Poppins", sans-serif;
-  width: 4rem;
-}
-
-#register .th-description {
-  font: 700 0.875rem "Poppins", sans-serif;
-  width: 12rem; 
-}
-
-#register .th-type {
-  font: 700 0.875rem "Poppins", sans-serif;
-  width: 8rem;
-}
-
-#register .th-action {
-  font: 700 0.875rem "Poppins", sans-serif;
-}
-
-#register .bt-edit,
-#register .bt-delete {
-  width: 2rem;
-}
-
-#register .bt-delete img,
-#register .bt-edit img {
-
-  width: 1.6rem;
-
-  border-radius: 5px;
-  cursor: pointer;
-  transition: filter 0.2s; 
-
-  background: #b1b1b6;  
-}
-
-#register .bt-edit img:hover{
-  background: #284263;
-}
-
-#register .bt-delete img:hover{
-  background: #832020;
+/*seleciona os 2 ultimos objetos (celulas da tabela)*/
+#register table td:nth-last-child( -n+2) {
+  width: 3rem;
 }
 
 
-
-
+/* Paginate ================================= */
 /* --- CONFIGURAÇÃO ESTILO CONTROL PAGINATE --- */
 
 #register .pagination{
@@ -236,37 +170,6 @@
 
   #register .search input {
     width: 30rem ;
-  }
-
-  /*--- ### CONTENT ### ---*/
-
-  #register .td_code {
-    width: 8.30rem;
-  }
-
-  #register .td_description {
-    width: 30rem;
-  }
-
-  #register .td_type {
-    width: 10rem;
-  }
-
-  #register .bt-edit,
-  #register .bt-delete {
-    width: 2rem;
-  }
-
-  #register .bt-delete img,
-  #register .bt-edit img {
-
-    width: 1.6rem;
-
-    border-radius: 5px;
-    cursor: pointer;
-    transition: filter 0.2s; 
-
-    background: #b1b1b6;  
   }
 
 }

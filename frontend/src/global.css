@@ -34,7 +34,7 @@ button {
 :root {
     --base-color: #284263;
     --base-color-soft: #F9F9F9;
-    --base-color-white: #fff;
+    --base-color-white: #f0f2f5;
     --text-color: #3E3E3E;
     --text-color-soft: #dcdce6;
 }
@@ -83,3 +83,109 @@ main {
 
 }
 
+#register .content {
+    margin-top: 2rem;  
+}
+
+
+/* Table ================================= */
+
+.dataTable {
+    font: 400 0.7rem "Poppins", sans-serif; 
+    width: 100%;
+    border-spacing: 0 0.2rem;
+    color: #878787;
+}
+  
+table thead th {
+    font: 400 0.875rem "Poppins", sans-serif;
+    text-align: center;
+}
+  
+table tbody tr {
+    text-align: center;
+    opacity: 0.7;
+}
+  
+table tbody tr:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+  
+table tbody td {
+    height: 2.5rem;
+    background: #fff;
+    padding: 0.4rem 0rem;
+  
+}
+  
+table tbody tr th:first-child,
+table tbody tr td:first-child {
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+  
+table tbody tr th:last-child,
+table tbody tr td:last-child {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+  
+table .edit, 
+table .delete {
+    font-size: 1.1rem;
+}
+  
+table .edit:hover {
+    color: #00BCD4;
+}
+  
+table .delete:hover {
+    color: red;
+}
+
+/* ========================================== */
+/* ============= MEDIA QUERIES ============== */
+/* ========================================== */
+
+/* ### --- --- --- --- --- --- --- --- --- --- --- ### */
+/* ### --- medium large devices: mais de 670px --- ### */
+/* ### --- --- --- --- --- --- --- --- --- --- --- ### */
+
+@media(min-width: 670px) {
+
+    /*--- ### SEARCH ### ---*/
+  
+    .search input {
+      width: 27rem ;
+   }
+  
+    /*--- ### CONTENT ### ---*/
+    
+    .content {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+  
+  }
+  
+  /* ### --- --- --- --- --- --- --- --- --- --- --- ### */
+  /* ### --- extra large devices: mais de 980px  --- ### */
+  /* ### --- --- --- --- --- --- --- --- --- --- --- ### */
+  
+  @media(min-width: 980px) {
+    
+    /*--- ### CONTENT ### ---*/
+  
+    .dataTable {
+      width: 70%;
+    }
+  
+    .code {
+      width: 8.30rem;
+    }
+  
+    .description {
+      width: 30rem;
+    }
+  
+  }

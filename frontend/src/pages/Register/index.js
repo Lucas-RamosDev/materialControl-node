@@ -1,21 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { Link } from 'react-router-dom'
 
-import { FiChevronsLeft, FiChevronLeft, FiChevronsRight, FiChevronRight, FiShoppingCart } from 'react-icons/fi'
+import { 
+    FiChevronsLeft, 
+    FiChevronLeft, 
+    FiChevronsRight, 
+    FiChevronRight, 
+    //FiTrash2,
+    //FiEdit
+} from 'react-icons/fi'
 
 import Header from '../../components/Header';
 import SideBar from '../../components/SideBar'
 
-import EditIcon from '../../assets/edit.svg'
-import DeleteIcon from '../../assets/delete.svg'
+//import editIcon from '../../assets/edit.svg'
+//import deleteIcon from '../../assets/delete.svg'
 import notFoundImg from '../../assets/notFound.png'
 
 import './styles.css'
 
 export default function Register() { 
 
-    let tableData = [
+    let dataRegisters = [
         { code: '0001', description: 'AVENTAL DE PVC', type: 'UNIFORMES' },
         { code: '0002', description: 'AVENTAL TERMINCO', type: 'EPI' },
         { code: '0003', description: 'BOTA DE BORRACHA PVC', type: 'MATERIAL' },
@@ -39,6 +46,84 @@ export default function Register() {
     ];
 
 
+    /* --- # PENSAMENTO 1 # ---
+        Preciso exibir o array tableData na tela
+    */
+
+    const TableData = {
+
+        //- responsável por selecionar o "tbody" do "dataTable"
+        //datasContainer: document.querySelector('#dataTable tbody'),
+        datasContainer: document.getElementById('tbodyTest'),       
+
+        //- funcionalidade responsável por adicionar os dados
+        addData(data, index) {
+            //- Cria o elemento "tr"
+            const tr = document.createElement('tr')
+
+            tr.innerHTML = TableData.innerHTMLData(data) //- estamos colocando o conteudo do (const) "html" dentro do "tr"
+            
+            TableData.datasContainer.appendChild(tr)
+
+            console.log(tr)
+            
+        },
+
+        //- funcionalidade responsável por criar a máscara da tabela
+        innerHTMLData(data) {
+
+            
+
+            const html = `
+            <td className="code">${data.code}</td>
+            <td className="item">${data.description}</td>
+            <td className="type">${data.type}</td>
+            <td className="edit">
+                Editar
+            </td>
+            <td className="delete">
+                delete
+            </td>     
+            `
+            return html
+        },
+
+        /*
+        clearDatas() {
+            TableData.datasContainer.innerHTML = ""
+        },
+        */
+
+    }
+
+    const App = {
+
+        init() {
+
+            
+            //- executando a função para aparecer no html
+            dataRegisters.forEach(function(items) {
+                TableData.addData(items)
+            })
+
+            
+
+            //- função responsável para não deixar repetir os resultados na tabela
+            //TableData.clearDatas()
+            
+        }
+
+    }
+
+    App.init()
+
+
+
+
+
+
+
+
 
     return (
 
@@ -58,7 +143,6 @@ export default function Register() {
 
                 </div>
 
-
                 <div className="search" >
 
                     <input
@@ -72,21 +156,22 @@ export default function Register() {
 
                 </div>
 
-
                 <div id="content" className="content">
 
-                    <table>
+                    <table id="dataTable" className="dataTable">
 
                         <thead>
                             <tr>
-                                <th className="th-code" >Código</th>
-                                <th className="th-description" >Descrição</th>
-                                <th className="th-type" >Tipo</th>
-                                <th colSpan="2" className="th-action" >Ações</th>
+                                <th>Código</th>
+                                <th>Descrição</th>
+                                <th>Tipo</th>
+                                <th colSpan="2">Ações</th>
                             </tr>
                         </thead>
 
-                        <tbody className="tableData" id="tableData"></tbody>
+                        <tbody id="tbodyTest">
+
+                        </tbody>
 
                     </table>
 
@@ -125,7 +210,6 @@ export default function Register() {
                     </div>
 
                 </div>
-                
                 
                 <div id="notFound" className="notFound">
 

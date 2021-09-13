@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { FiChevronsLeft, FiChevronLeft, FiChevronsRight, FiChevronRight } from 'react-icons/fi'
 
@@ -11,6 +11,7 @@ import './styles.css'
 
 export default function Stock() { 
 
+    /*
     let tableData = [
         { code: '0001', description: 'AVENTAL DE PVC', market: 'LOJA 01', amount: '05' },
         { code: '0002', description: 'AVENTAL TERMINCO', market: 'LOJA 04', amount: '10' },
@@ -33,236 +34,7 @@ export default function Stock() {
         { code: '0019', description: 'LUVAS DE ALGODAO', market: 'LOJA 04', amount: '22' },
         { code: '0020', description: 'TESTE TESTANDO', market: 'LOJA 01', amount: '15' },
     ];
-
-    
-    useEffect(() => {
-        
-        init()
-
-    }, []);
-    
-
-    //--- ### FUNÇÃO DOS CONTROLES E EXIBIÇÃO DA TABELA ### --- //
-
-    let perPage = 10 // qts elementos quero ver por pg
-    const state = {
-        page: 1, // pagina atual em que estou
-        perPage, // qts elementos quero ver por pg
-        totalPage: Math.ceil(tableData.length / perPage) // conta quantas paginas terei
-                // Math.ceil() realiza o arredondamento para cima
-    }
-
-    //console.log(state.perPage)
-    
-    // Pega os eventos dos clicks -> controls.createListeners
-    const html = { 
-        get(element) {
-            return document.querySelector(element)
-        }
-    }
-    
-    // Funções dos controles
-    const controls = {
-        next() {
-            state.page++
-
-            const lastPage = state.page > state.totalPage
-            if(lastPage) {
-                state.page--
-            }
-        },
-
-        prev() {
-            state.page--
-
-            if(state.page < 1){
-                state.page++
-            }
-        },
-
-        goTo(page) {
-            if(page < 1) {
-                page = 1
-            }
-
-            state.page = page
-
-            if(page > state.totalPage) {
-                state.page = state.totalPage
-            }
-        },
-
-        search() {
-
-            const valueInput = document.querySelector('.inputSearch').value.toUpperCase()
-            const searchDescription = tableData.filter(obj => obj.description.toUpperCase().startsWith(valueInput)) //.startsWith() -> localiza strings iniciadas com...                                                 
-            const searchCode = tableData.filter(obj => obj.code === valueInput)
-            
-            const valueSelect = document.querySelector('.selectSearch').value.toUpperCase()
-            const searchMarket = tableData.filter(obj => obj.market.toUpperCase().startsWith(valueSelect))
-            
-
-
-            let searchResult
-            
-            /*
-            if(searchDescription.length !== 0 ) {
-                searchResult = searchDescription
-            } else if (searchCode.length !== 0 ) {
-                searchResult = searchCode
-            } else if (searchMarket.length !== 0 ){    
-                searchResult = searchMarket
-            } else {
-                searchResult = false //'Resultado não encontrado!'
-            }*/
-
-        
-            if(searchMarket.length !== 0 ) {
-                searchResult = searchMarket
-            } else if (searchDescription.length !== 0 ) {
-                searchResult = searchDescription
-            } else if (searchCode.length !== 0 ){    
-                searchResult = searchCode
-            } else {
-                searchResult = false //'Resultado não encontrado!'
-            }
-
-
-            //console.log(searchResult)
-            return searchResult
-        },
-
-        searchNotFound(){
-            document.getElementById('content').style.display = "none"
-            document.getElementById('pagination').style.display = "none"
-            document.getElementById('notFound').style.display = "block"
-        },
-
-        searchShow(){
-            document.getElementById('content').style.display = "flex"
-            //document.getElementById('pagination').style.display = "flex"
-            document.getElementById('notFound').style.display = "none"
-        },
-
-
-        // Houve os eventos de cliques
-        createListeners() {
-            html.get('.first').addEventListener('click', () => { // 'first' é a classe atribuida no html
-                controls.goTo(1)
-                update()
-            })
-
-            html.get('.last').addEventListener('click', () => {
-                controls.goTo(state.totalPage)
-                update()
-            })
-
-            html.get('.next').addEventListener('click', () => {
-                controls.next()
-                update()
-                
-            })
-
-            html.get('.prev').addEventListener('click', () => {
-                controls.prev()
-                update()
-            })
-
-            //-- pesquisa
-            html.get('.btnSearch').addEventListener('click', () => {
-                controls.search()
-                controls.searchShow()
-                update()
-            })
-
-        }
-
-    }  
-    
-    function update() {
-        
-        let page = state.page - 1           //      --- EXEMPLO PRATICO ---
-        let start = page * state.perPage    // page = 0 -> perPage = 5 -> 0 * 5 = 0
-        let end = start + state.perPage     // start = 0 -> perPage = 5 -> 0 + 5 = 5    
-        
-        if (controls.search() === false) {
-
-            controls.searchNotFound()
-
-        } else {
-
-            let tableDataSearch = controls.search()
-
-            //const paginatedItems = tableData.slice(start, end)
-            const paginatedItems = tableDataSearch.slice(start, end)
-
-            paginatedItems.forEach(()=>{})
-            //console.log(paginatedItems)
-
-            // --- Cria a tabela dinâmica ---
-
-            let tbody = document.getElementById('tableData') // seleciona a class "tableData" HTML
-            tbody.innerText = ''
-
-            for( let i=0; i < paginatedItems.length; i++ ) {
-                let tr = tbody.insertRow();
-
-                let td_code = tr.insertCell();
-                let td_description = tr.insertCell();
-                let td_market = tr.insertCell();
-                let td_amount = tr.insertCell();
-
-                td_code.innerText = paginatedItems[i].code;
-                td_description.innerText = paginatedItems[i].description;
-                td_market.innerText = paginatedItems[i].market;
-                td_amount.innerText = paginatedItems[i].amount;
-                
-                //-- adiciona estilo dinamicamente (td_code = class do .css)
-                td_code.classList.add('td_code')
-                td_description.classList.add('td_description')
-                td_market.classList.add('td_market')
-                td_amount.classList.add('td_amount')
-
-            }
-        
-        }
-
-    }
-
-
-    function init(){
-            update()
-            controls.createListeners()
-        }
-
-            // --- ### FUNÇÕES DO COUNTER VISÍVEL ### ---
-    const [counter, setCounter] = useState(1)
-    
-    function counterNext(){
-        let counterPage = counter + 1
-        if(counterPage > state.totalPage) {
-            setCounter(counter)
-        } else {
-            setCounter(counter + 1)
-        }
-    }
-
-    function counterPrev(){
-        let counterPage = counter - 1
-        if(counterPage < state.page) {
-            setCounter(1)
-        } else {
-            setCounter(counter - 1)
-        }
-    }
-
-    function counterFirst(){
-        setCounter(1)
-    }
-
-    function counterLast(){
-        setCounter(state.totalPage)
-    }
+    */
 
 
     return (
@@ -309,7 +81,7 @@ export default function Stock() {
 
                 <div id="content" className="content">
 
-                    <table>
+                    <table className="dataTable">
 
                         <thead>
                             <tr>
@@ -320,7 +92,30 @@ export default function Stock() {
                             </tr>
                         </thead>
 
-                        <tbody className="tableData" id="tableData"></tbody>
+                        <tbody>
+
+                            <tr>
+                                <td className="code">2456</td>
+                                <td className="item">Avental termico</td>
+                                <td className="market">Loja01</td>
+                                <td className="amount">05</td>
+                            </tr>
+
+                            <tr>
+                                <td className="code">2456</td>
+                                <td className="item">Avental termico</td>
+                                <td className="market">Loja01</td>
+                                <td className="amount">05</td>
+                            </tr>
+
+                            <tr>
+                                <td className="code">2456</td>
+                                <td className="item">Avental termico</td>
+                                <td className="market">Loja01</td>
+                                <td className="amount">05</td>
+                            </tr>
+
+                        </tbody>
 
                     </table>
 
@@ -330,30 +125,30 @@ export default function Stock() {
 
                     <div 
                     className="first" 
-                    onClick={counterFirst}
+                    onClick={()=>{}}
                     > 
                         <FiChevronsLeft size="20"/> 
                     </div>
 
                     <div 
                     className="prev" 
-                    onClick={counterPrev}
+                    onClick={()=>{}}
                     > 
                         <FiChevronLeft size="20"/> 
                     </div>
 
-                    <div className="numbers"> {counter} </div>
+                    <div className="numbers"> {()=>{}} </div>
 
                     <div 
                     className="next" 
-                    onClick={counterNext}
+                    onClick={()=>{}}
                     > 
                         <FiChevronRight size="20"/> 
                     </div>
 
                     <div 
                     className="last"
-                    onClick={counterLast}
+                    onClick={()=>{}}
                     > 
                         <FiChevronsRight size="20"/> 
                     </div>

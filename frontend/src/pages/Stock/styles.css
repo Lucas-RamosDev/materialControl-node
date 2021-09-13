@@ -79,39 +79,6 @@
   margin-top: 2rem;
 }
 
-#stock .content table {
-  font: 400 0.7rem "Poppins", sans-serif; 
-
-}
-
-#stock .content table td {
-  height: 2.5rem;
-  text-align: center;
-  border-top: 1px solid #DAE8F9;
-
-  /*background:navajowhite;*/
-
-}
-
-
-#stock .th-code {
-  font: 700 0.875rem "Poppins", sans-serif;
-  width: 4rem;
-}
-
-#stock .th-description {
-  font: 700 0.875rem "Poppins", sans-serif;
-  width: 12rem; 
-}
-
-#stock .th-market {
-  font: 700 0.875rem "Poppins", sans-serif;
-  width: 8rem;
-}
-
-#stock .th-amount {
-  font: 700 0.875rem "Poppins", sans-serif;
-}
 
 
 

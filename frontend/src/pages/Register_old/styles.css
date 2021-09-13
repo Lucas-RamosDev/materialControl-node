@@ -82,7 +82,7 @@
 
 }
 
-/*seleciona os 2 ultimos objtos (celulas da tabela)*/
+/*seleciona os 2 ultimos objetos (celulas da tabela)*/
 #register .content table td:nth-last-child( -n+2) {
   border-top: none;
 }
