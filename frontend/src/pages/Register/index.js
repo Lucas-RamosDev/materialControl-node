@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import { Link } from 'react-router-dom'
 
 import {
@@ -13,14 +12,17 @@ import {
 } from 'react-icons/fi'
 
 import Header from '../../components/Header';
-import SideBar from '../../components/SideBar'
-import notFoundImg from '../../assets/notFound.png'
+import SideBar from '../../components/SideBar';
+import ModalTrash from '../../components/Modal';
+import notFoundImg from '../../assets/notFound.png';
 
 import './styles.css'
 
 const DataRegisters = require('../../model/Register')
+const ModalController = require('../../controllers/ModalController')
 
-export default function Register() {  
+export default function Register() {
+
 
 return (
 
@@ -77,13 +79,13 @@ return (
 
                                     <td>
                                         <button>
-                                            <FiEdit className="edit" />
+                                            <FiEdit className="edit"/>
                                         </button>
                                     </td>
 
                                     <td>
-                                        <button>
-                                            <FiTrash2 className="delete" />
+                                        <button onClick={() => ModalController.open()}>
+                                            <FiTrash2 className="delete"/>
                                         </button>
                                     </td>
 
@@ -95,6 +97,7 @@ return (
                     </tbody>
 
                 </table>
+
             </div>
 
             <div id="pagination" className="pagination">
@@ -127,32 +130,40 @@ return (
 
         </main>
 
-        <div className="modalTrash open">
+        <div className="modal-edit active">
+                    
+            <div className="modal-edit-body">
 
-            <div className="modal">
-                <FiTrash2 className="modalImgDelete" />
+            <h1>Editar</h1>
 
-                <h3>Excluir Registro</h3>
+            <p>Edite o item com as informações <br/>
+                necessárias.</p>
+                            
+                <form>
 
-                <p>Quer mesmo excluir esse o item Avental de PVC? <br/>
-                Ele será apagado para sempre.
-                </p>
+                    <label>Código:</label>
 
-                <footer>
+                    <p>0001</p>
 
-                    <button>
-                        Cancelar
+                    <label>Descrição do item:</label>
+                    <input 
+                        placeholder="Descrição do item"
+                        value="Avental de PVC"
+                    />
+
+                    <button
+                        className="button"
+                        type="submit"
+                    >Gravar
                     </button>
 
-                    <button>
-                        Excluir job
-                    </button>
-
-                </footer>
+                </form>
 
             </div>
 
         </div>
+
+        <ModalTrash />
 
     </div>
 

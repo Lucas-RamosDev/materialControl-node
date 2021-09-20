@@ -28,12 +28,12 @@
     text-align: center;
     margin-bottom: 3.125rem;
 }
-form h1 {
+.form-login form h1 {
     font: 700 1.625rem "Poppins", sans-serif;
     color: var(--text-color);
 }
 
-form input {
+.form-login form input {
 
     font: 400 1.125rem "Poppins", sans-serif;
     color: var(--text-color);
