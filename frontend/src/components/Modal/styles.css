@@ -1,7 +1,8 @@
-/* Modal Trash ================================= */
-/* para ativar o modal na pagina colocar no className o "active" na frente*/
+/* Modais quando inativo ================================= */
 
-.modal-trash {
+.modal-trash,
+.modal-edit,
+.modal-register {
     
   visibility: hidden;
   opacity: 0;
@@ -16,10 +17,12 @@
 
 
   display: flex;
-  justify-content: center;
+ justify-content: center;
   align-items: center;
 
 }
+
+/* Modal Trash ================================= */
 
 .modal-trash.active {
   height: 100vh;
@@ -40,8 +43,7 @@
   opacity: 1;
 }
 
-.modal {
-
+.modal-trash-box {
   background: #F0F2F5;
   border-radius: 0.313rem;
   padding: 2.5rem;
@@ -49,23 +51,23 @@
   color: #878787;
 }
 
-.modalImgDelete {
+.modal-trash-box span {
   color: #EB3B35;
   margin-bottom: 2rem;
   font-size: 4.5rem;
 }
 
-.modal h3 {
+.modal-trash-box h3 {
   
   font: 700 1.625rem "Poppins", sans-serif;
   margin-bottom: 0.5rem;
 }
 
-.modal p {
+.modal-trash-box p {
   margin-bottom: 2rem;
 }
 
-.modal footer button {
+.modal-trash-box footer button {
   padding: 0.75rem 3rem;
   border-radius: 0.313rem;
 
@@ -80,24 +82,264 @@
   cursor:pointer;
 }
 
-.modal footer button + button {
+.modal-trash-box footer button + button {
   margin-left: 0.5rem;
 }
 
-.modal footer button:nth-child(1) {
+.modal-trash-box footer button:nth-child(1) {
   color: #787880 ;
   background: #E1E3E5;
 }
 
-.modal footer button:nth-child(1):hover {
+.modal-trash-box footer button:nth-child(1):hover {
   background: #ECEEF0;
 }
 
-.modal footer button:nth-child(2) {
+.modal-trash-box footer button:nth-child(2) {
   background: #EB3B35;
   color: #ECEEF0;
 }
 
-.modal footer button:nth-child(2):hover {
+.modal-trash-box footer button:nth-child(2):hover {
   background: #FA3F38;
+}
+
+/* Modal Edit ================================= */
+
+.modal-edit.active  {
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  background: rgba(0, 0, 0, 0.8);
+
+  display: flex;
+  justify-content: right;
+  align-items: center;
+
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-edit-box {
+
+  width: 30rem;
+  height: 100vh;
+  background: #F0F2F5;
+  text-align: center;
+  color: #878787;
+
+}
+
+.modal-edit-box h1 {
+  font-family: "Poppins", sans-serif;
+  margin-top: 2rem;
+}
+
+.modal-edit-box form {
+  padding: 0 4.5rem;
+
+  display: flex;
+  flex-direction: column;
+ }
+
+ .modal-edit-box label {
+  margin-top: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: #787880;
+}
+
+.modal-edit-box p {
+  margin-top: 0.5rem;
+}
+
+.modal-edit-box input {
+  margin-top: 0.5rem;
+  width: 21rem ;
+  height: 2.8rem;
+
+  padding: 0 1.5rem;
+  font: 400 0.875rem "Poppins", sans-serif;
+
+  border: 1px solid #dcdce6;
+  border-radius: 8px;
+}
+
+.box-button {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-button button {
+  padding: 0.75rem 3rem;
+  border-radius: 0.313rem;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.625rem;
+  text-transform: uppercase;
+
+  transition: all .2s;
+
+  cursor:pointer;
+}
+
+.box-button button + button {
+  margin-left: 0.5rem;
+}
+
+.box-button button:nth-child(1) {
+  color: #787880 ;
+  background: #E1E3E5;
+}
+
+.box-button button:nth-child(1):hover {
+  background: #ECEEF0;
+}
+
+.box-button button:nth-child(2) {
+  background: var(--base-color);
+  color: #ECEEF0;
+}
+
+.box-button button:nth-child(2):hover {
+  opacity: 0.9;
+}
+
+/* Modal Register ================================= */
+
+.modal-register.active  {
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  background: rgba(0, 0, 0, 0.8);
+
+  display: flex;
+  justify-content: right;
+  align-items: center;
+
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-register-box {
+
+  width: 30rem;
+  height: 100vh;
+  background: #F0F2F5;
+  text-align: center;
+  color: #878787;
+
+}
+
+.modal-register-box h1 {
+  font-family: "Poppins", sans-serif;
+  margin-top: 2rem;
+}
+
+.modal-register-box form {
+  padding: 0 4.5rem;
+
+  display: flex;
+  flex-direction: column;
+ }
+
+ .modal-register-box label {
+  margin-top: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: #787880;
+}
+
+.modal-register-box p {
+  margin-top: 0.5rem;
+}
+
+.modal-register-box select {
+  margin-top: 2rem;
+  width: 21rem ;
+  height: 2.8rem;
+
+  padding: 0 1.5rem;
+  font: 400 0.875rem "Poppins", sans-serif;
+
+  border: 1px solid #dcdce6;
+  border-radius: 8px;
+}
+
+.input-between {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.input-between .input-code {
+  width: 6rem;
+}
+
+.modal-register-box input {
+  margin-top: 2rem;
+  width: 21rem ;
+  height: 2.8rem;
+
+  padding: 0 1.5rem;
+  font: 400 0.875rem "Poppins", sans-serif;
+
+  border: 1px solid #dcdce6;
+  border-radius: 8px;
+}
+
+.box-button {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-button button {
+  padding: 0.75rem 3rem;
+  border-radius: 0.313rem;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.625rem;
+  text-transform: uppercase;
+
+  transition: all .2s;
+
+  cursor:pointer;
+}
+
+.box-button button + button {
+  margin-left: 0.5rem;
+}
+
+.box-button button:nth-child(1) {
+  color: #787880 ;
+  background: #E1E3E5;
+}
+
+.box-button button:nth-child(1):hover {
+  background: #ECEEF0;
+}
+
+.box-button button:nth-child(2) {
+  background: var(--base-color);
+  color: #ECEEF0;
+}
+
+.box-button button:nth-child(2):hover {
+  opacity: 0.9;
 }

@@ -13,7 +13,9 @@ import {
 
 import Header from '../../components/Header';
 import SideBar from '../../components/SideBar';
-import ModalTrash from '../../components/Modal';
+import ModalTrash from '../../components/Modal/ModalTrash';
+import ModalEdit from '../../components/Modal/ModalEdit';
+import ModalRegister from '../../components/Modal/ModalRegister';
 import notFoundImg from '../../assets/notFound.png';
 
 import './styles.css'
@@ -36,7 +38,7 @@ return (
 
             <div className="header">
                 <h1 className="title">Cadastro de Itens</h1>
-                <Link to="/home" >Cadastrar</Link>
+                <button onClick={() => ModalController.openRegister()}>Cadastrar</button>
             </div>
 
             <div className="search" >
@@ -78,13 +80,13 @@ return (
                                     <td>{prop.type}</td>
 
                                     <td>
-                                        <button>
+                                        <button onClick={() => ModalController.openEdit()}>
                                             <FiEdit className="edit"/>
                                         </button>
                                     </td>
 
                                     <td>
-                                        <button onClick={() => ModalController.open()}>
+                                        <button onClick={() => ModalController.openTrash()}>
                                             <FiTrash2 className="delete"/>
                                         </button>
                                     </td>
@@ -129,39 +131,10 @@ return (
             </div>
 
         </main>
+            
+        <ModalRegister />
 
-        <div className="modal-edit active">
-                    
-            <div className="modal-edit-body">
-
-            <h1>Editar</h1>
-
-            <p>Edite o item com as informações <br/>
-                necessárias.</p>
-                            
-                <form>
-
-                    <label>Código:</label>
-
-                    <p>0001</p>
-
-                    <label>Descrição do item:</label>
-                    <input 
-                        placeholder="Descrição do item"
-                        value="Avental de PVC"
-                    />
-
-                    <button
-                        className="button"
-                        type="submit"
-                    >Gravar
-                    </button>
-
-                </form>
-
-            </div>
-
-        </div>
+        <ModalEdit />
 
         <ModalTrash />
 

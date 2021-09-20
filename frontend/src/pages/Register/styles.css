@@ -13,7 +13,7 @@
   justify-content:space-between; 
 }
 
-#register .header a {
+#register .header button {
   padding: 0.6rem 0.8rem;
   font: 500 0.875rem "Poppins", sans-serif;
   color: #284263;
@@ -22,7 +22,7 @@
   transition: 0.2s;
 }
 
-#register .header a:hover {
+#register .header button:hover {
   background: #DAE8F9;
 }
 
@@ -119,85 +119,6 @@
   width: 15rem;
   margin-top: 40px;
 }
-
-
-/* Modal Edit ================================= */
-
-.modal-edit {
-    
-  visibility: hidden;
-  opacity: 0;
-
-  height: 100vh;
-  width: 100vw;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.modal-edit.active {
-  height: 100vh;
-  width: 100vw;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-
-  background: rgba(0, 0, 0, 0.8);
-
-  display: flex;
-  justify-content: right;
-  align-items: center;
-
-  visibility: visible;
-  opacity: 1;
-}
-
-.modal-edit-body {
-
-  width: 30rem;
-  height: 100vh;
-  background: #F0F2F5;
-  text-align: center;
-  color: #878787;
-
-}
-
-.modal-edit-body h1 {
-  font-family: "Poppins", sans-serif;
-  margin-top: 2rem;
-}
-
-.modal-edit-body form {
-
-  display: flex;
-  flex-direction: column;
- }
-
-.modal-edit-body label {
-  
-  margin-top: 3rem;
-
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  color: #787880;
-}
-
-.modal-edit-body input {
-  width: 20rem;
-  padding: 0.75rem 1.5rem;
-  font-family: "Poppins", sans-serif;
-}
-
 
 /* ========================================== */
 /* ============= MEDIA QUERIES ============== */
