@@ -4,7 +4,7 @@ module.exports = {
   async create(request, response) {
     
     
-    const code = "1234"
+    const code = Math.round(Math.random() * (9999 - 1000) + 1000) //-cria um numero aleatorio entre 1000 a 9999 e arredonda o mesmo
     
     const { description, type, uniform, certificate } = request.body;
 
@@ -19,14 +19,16 @@ module.exports = {
       user_id
     })
 
-  }
+    return response.json({ code, description })
+
+  },
+
+  async index(request, response) {
+    const items = await connection('items').select('*');
+  
+    return response.json(items);
+  },
+
+
 }
 
-/*
-    table.string('code').notNullable();
-    table.string('description').notNullable();
-    table.string('type').notNullable();
-    table.string('uniform').notNullable();
-    table.string('certificate').notNullable();
-
-*/
