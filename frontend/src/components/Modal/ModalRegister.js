@@ -49,7 +49,7 @@ export default function ModalRegister(){
             </select>
    
             <input
-                placeholder="C/A"
+                placeholder="Certif. de aprovação (C/A)"
             />
     
             <div className="box-button">
